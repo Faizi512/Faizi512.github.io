@@ -14,3 +14,16 @@
   background-color: #f3f4f6; /* equivalent to Tailwind bg-gray-100 */
   padding: 1rem; /* equivalent to Tailwind p-4 */
 }
+
+.profile-picture-section {
+  text-align: center; /* Centers the content horizontally */
+  margin-bottom: 2rem; /* Adds some space below the section */
+}
+
+.profile-picture {
+  width: 150px; /* Set the width of the image */
+  height: 150px; /* Set the height of the image */
+  border-radius: 50%; /* Make the image circular */
+  background-color: #ccc; /* Placeholder background color (light gray) */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
