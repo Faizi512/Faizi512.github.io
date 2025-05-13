@@ -27,3 +27,8 @@
   background-color: #ccc; /* Placeholder background color (light gray) */
   object-fit: cover; /* Ensures the image covers the area without distortion */
 }
+
+.skill-badge.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
