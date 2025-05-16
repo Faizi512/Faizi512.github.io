@@ -96,6 +96,24 @@
       /* Dark Blue Shadow */
     }
 
+    .download-button {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.5rem 1rem;
+      background-color: #e74c3c;
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .download-button:hover {
+      background-color: #c0392b;
+    }
+
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -125,9 +143,11 @@
   <h1>Welcome to the Funky Doodle Page!</h1>
   <p>Let your imagination run wild with this playful and colorful design. It's all about having fun!</p>
 
-  <div class="doodle-box">
+  <div class="doodle-box" id="doodle-box">
     <span>🎨 Doodle!</span>
   </div>
+
+  <button class="download-button" id="download-button">Download Doodle</button>
 
   <footer>
     <p>Made with ❤️ by <a href="https://github.com/Faizi512" target="_blank">Faizan Haider</a></p>
@@ -135,8 +155,40 @@
 
   <script>
     const colorPicker = document.getElementById('background-color-picker');
+    const doodleBox = document.getElementById('doodle-box');
+    const downloadButton = document.getElementById('download-button');
+
+    // Change background color dynamically
     colorPicker.addEventListener('input', (event) => {
       document.body.style.backgroundColor = event.target.value;
+    });
+
+    // Download doodle as an image
+    downloadButton.addEventListener('click', () => {
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      const boxStyles = window.getComputedStyle(doodleBox);
+
+      // Set canvas dimensions
+      canvas.width = doodleBox.offsetWidth;
+      canvas.height = doodleBox.offsetHeight;
+
+      // Draw the doodle box background
+      context.fillStyle = boxStyles.backgroundColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the text
+      context.font = '30px Fredoka One';
+      context.fillStyle = '#ecf0f1';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText('🎨 Doodle!', canvas.width / 2, canvas.height / 2);
+
+      // Trigger download
+      const link = document.createElement('a');
+      link.download = 'doodle.png';
+      link.href = canvas.toDataURL();
+      link.click();
     });
   </script>
 </body>
