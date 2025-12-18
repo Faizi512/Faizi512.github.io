@@ -307,11 +307,11 @@
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card" data-project="ahkn">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/Faizi512/ahkn_management_system" target="_blank" class="project-link" aria-label="GitHub">
+              <a href="https://github.com/Faizi512/ahkn_management_system" target="_blank" class="project-link" aria-label="GitHub" onclick="event.stopPropagation()">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -319,7 +319,6 @@
           <h3 class="project-title">AHKN Management System</h3>
           <p class="project-description">Developed an LMS-style platform for NGO operations, including user roles, content workflows, and reporting dashboards. Web application to handle admin work and automate operations processes.</p>
           <div class="project-tech">
-            <span class="tech-tag">Vue.js</span>
             <span class="tech-tag">Ruby on Rails</span>
             <span class="tech-tag">PostgreSQL</span>
             <span class="tech-tag">Azure</span>
@@ -328,11 +327,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-project="picnui">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/Faizi512/URSim" target="_blank" class="project-link" aria-label="GitHub">
+              <a href="https://github.com/Faizi512/URSim" target="_blank" class="project-link" aria-label="GitHub" onclick="event.stopPropagation()">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -347,11 +346,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-project="pdf-voice">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/Faizi512/pdf_to_voice" target="_blank" class="project-link" aria-label="GitHub">
+              <a href="https://github.com/Faizi512/pdf_to_voice" target="_blank" class="project-link" aria-label="GitHub" onclick="event.stopPropagation()">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -368,11 +367,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-project="hec-olap">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/Faizi512/Data-Warehouse-ETL-with-Python" target="_blank" class="project-link" aria-label="GitHub">
+              <a href="https://github.com/Faizi512/Data-Warehouse-ETL-with-Python" target="_blank" class="project-link" aria-label="GitHub" onclick="event.stopPropagation()">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -389,11 +388,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-project="automation-bot">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/Faizi512/appointments-bot" target="_blank" class="project-link" aria-label="GitHub">
+              <a href="https://github.com/Faizi512/appointments-bot" target="_blank" class="project-link" aria-label="GitHub" onclick="event.stopPropagation()">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -410,11 +409,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-project="lessaccounting">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://welcome.lessaccounting.com/login" target="_blank" class="project-link" aria-label="Live Site">
+              <a href="https://welcome.lessaccounting.com/login" target="_blank" class="project-link" aria-label="Live Site" onclick="event.stopPropagation()">
                 <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
@@ -430,11 +429,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-project="compliance-easy">
           <div class="project-header">
             <i class="fas fa-folder-open project-icon"></i>
             <div class="project-links">
-              <a href="https://www.complianceeasy.com.au/" target="_blank" class="project-link" aria-label="Live Site">
+              <a href="https://www.complianceeasy.com.au/" target="_blank" class="project-link" aria-label="Live Site" onclick="event.stopPropagation()">
                 <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
@@ -758,6 +757,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-header">
+        <h2 id="modal-title" class="modal-title"></h2>
+      </div>
+      <div class="modal-body">
+        <div id="modal-description" class="modal-description"></div>
+        <div id="modal-contributions" class="modal-contributions"></div>
+        <div id="modal-tech" class="modal-tech"></div>
+        <div id="modal-links" class="modal-links"></div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
