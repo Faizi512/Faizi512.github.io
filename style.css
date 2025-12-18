@@ -637,11 +637,45 @@ body {
   transition: var(--transition);
   border: 1px solid var(--border-color);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: 'Click to view details';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(16, 185, 129, 0.95));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 10;
+  border-radius: 1rem;
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
+}
+
+.project-card:hover .project-header,
+.project-card:hover .project-title,
+.project-card:hover .project-description,
+.project-card:hover .project-tech {
+  position: relative;
+  z-index: 1;
 }
 
 .project-header {
