@@ -210,7 +210,7 @@ async function fetchGitHubStats(username) {
     const userData = await userResponse.json();
     
     // Fetch repositories
-    const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+    const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=10`);
     if (!reposResponse.ok) throw new Error('Failed to fetch repositories');
     
     const reposData = await reposResponse.json();
